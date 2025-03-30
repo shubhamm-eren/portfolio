@@ -1,0 +1,265 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+:root{
+  --color1 : #212129;
+  --color2 : #323949;
+  --color3 : #3d3e51;
+  --color4 : #40445a;
+  --color5 : #4c5265;
+  --white : #fff;
+  --main-theme : #ee9797;
+}
+
+html {
+  font-size: 1.3vw; 
+}
+
+
+a {
+  font-size: 1rem;  
+  font-weight: 500; 
+  text-decoration: none; 
+  color: inherit; 
+}
+
+a:hover {
+  text-decoration: underline; 
+  color: var(--white); 
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  background: #000;
+  color: var(--white);
+  padding: 1rem; 
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem; 
+  align-items: center;
+}
+
+header a {
+  color: var(--white);
+  transition: color 0.3s ease; 
+}
+
+header h4 {
+  font-size: 2rem; 
+}
+
+
+header a:hover {
+  color: var(--white); 
+}
+
+
+body {
+  font-size: 1rem; 
+  line-height: 1.6; 
+}
+
+
+.container {
+  max-width: 90rem; 
+  margin: 0 auto; 
+  padding: 0 2rem; 
+}
+
+section.banner {
+  min-height: calc(100vh - 5.2rem);
+  background: var(--white);
+  overflow: hidden;
+  position: relative;
+}
+.animation_text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.animation_text span {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 23rem;
+  color: var(--color1);
+}
+
+.animation_text .animation_txt_wrp {
+  display: flex;
+  gap: 10rem;
+  padding-left: 10rem;
+}
+.profile_image {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+.profile_image img {
+  width: 34rem;
+  height: 80vh;
+  display: block;
+  object-fit: contain;
+  object-position: bottom;
+}
+@keyframes marquee-move-text {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animation_txt_wrp {
+  width: max-content;
+  animation: marquee-move-text 15s linear infinite forwards;
+}
+.animation_text span:nth-child(2) {
+  color: var(--color2);
+}
+
+
+section.about_sec {
+  min-height: 100vh;
+  background: var(--color2);
+  background-image: url('bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.p_100 {
+  padding: 8rem 0;
+}
+
+.about_sec .container {
+  height: 100% !important;
+}
+
+.about_main {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.about_img .img_abt {
+  width: 30rem;
+  display: block;
+  height: 90vh;
+  object-fit: contain;
+  transform: translateX(-50%) scaleX(-1);
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  object-position: bottom;
+}
+
+.about_img {
+  height: 100%;
+  display: flex;
+  align-items: end;
+  position: relative;
+}
+h3.txt_image {
+  position: absolute;
+  top: 11vh;
+  font-size: 5rem;
+  width: max-content;
+  animation: jump 1s ease infinite;
+  /* animation: glow 1.5s infinite alternate; */
+}
+
+@keyframes glow {
+  0% {
+      text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+  }
+  100% {
+      text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff, 0 0 160px #00d4ff;
+  }
+}
+.about_txt .head-tip {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.5rem;
+  display: block;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.about_txt h2 {
+  font-size: 4rem;
+  line-height: 5rem;
+  margin-bottom: 1rem;
+}
+
+.about_txt h2 span {
+  display: block;
+  color: var(--main-theme);
+}
+
+.about_txt p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+a.btn {
+  padding: 1.4rem 2rem 1rem 2rem;
+  background: var(--main-theme);
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: 1;
+  border-radius: 11rem;
+  color: var(--color1);
+  text-decoration: none;
+}
+
+.about_txt h2 span b {
+  display: none;
+}
+.about_txt h2 span b.cd_active {
+  overflow: hidden;
+  display: inline-block;
+  width: 0;
+  white-space: nowrap;
+  line-height: 1;
+  width: 100%;
+  animation: growWidth 2s ease-in-out;
+}
+
+@keyframes growWidth {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
