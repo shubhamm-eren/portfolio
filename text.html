@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main_portfolio img {
+        width: 100%;
+        height: 100%;
+        border-radius: 2rem;
+        display: block;
+        object-fit: cover;
+        }
+        div#panels-container {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 500% !important;
+        overflow: hidden;
+        }
+        .panel {
+        padding: 1rem;
+        background: #0000000f;
+        height: 100vh;
+        }
+        .panel:nth-child(even){
+        background-color: #000;
+        }
+
+        .main_portfolio {
+        /* height: 100vh; */
+        overflow: hidden;
+        }
+        .main_portfolio h2 {
+        text-align: center;
+        font-size: 7rem;
+        line-height: 1em;
+        text-transform: uppercase;
+        }
+        .main_portfolio_txt {
+        height: 30vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="main_portfolio" id="panels">
+        <div id="panels-container">
+            <div class="panel">
+                <img src="./public/screenshot.png" alt="Portfolio1"/>
+            </div>
+            <div class="panel">
+                <img src="./public/screenshot.png" alt="Portfolio1"/>
+            </div>
+            <div class="panel">
+                <img src="./public/screenshot.png" alt="Portfolio1"/>
+            </div>
+            <div class="panel">
+                <img src="./public/screenshot.png" alt="Portfolio1"/>
+            </div>
+            <div class="panel">
+                <img src="./public/screenshot.png" alt="Portfolio1"/>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+        gsap.registerPlugin(ScrollTrigger)
+    // gsap code here!
+    });
+    if (window.innerWidth > 991) {
+        window.addEventListener("load", function() {
+            let panelsSection = document.querySelector("#panels"),
+                panelsContainer = document.querySelector("#panels-container"),
+                tween;
+
+            
+            // Your GSAP initialization code
+            const panels = gsap.utils.toArray(".panel");
+
+            tween = gsap.to(panels, {
+            xPercent: -100 * (panels.length - 1),
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#panels",
+                pin: true,
+                start: "top top",
+                scrub: 1,
+                end: () => "+=" + (panelsContainer.offsetWidth - window.innerWidth)
+            }
+            }); 
+            
+        });
+    }
+</script>
+</html>

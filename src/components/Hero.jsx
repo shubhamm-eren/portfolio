@@ -2,6 +2,10 @@ const Hero = () => {
     return(
         <section className="banner">
             <div className="inner_banner">
+                <div className="black_strip">
+                    <h3>Wordpress Expert</h3>
+                    {/* <h3>Web developer</h3> */}
+                </div>
                 <div className="animation_text">
                     <h1>
                         <span className="animation_txt_wrp">
