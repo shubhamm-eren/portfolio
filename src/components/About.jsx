@@ -31,7 +31,7 @@ const About = () =>{
                     </div>
                     <div className="about_img">
                         <h3 className="txt_image">Web Developer</h3>
-                        <img className="img_abt" src="/profile_big.png" alt="Profile" />
+                        <img className="img_abt" src="/img2.webp" alt="Profile" />
                     </div>
                 </div>
             </div>

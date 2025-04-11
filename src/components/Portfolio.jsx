@@ -30,7 +30,7 @@ const Portfolio = () => {
                 trigger: triggerRef.current,
                 start: 'top top',
                 end: '2000 top',
-                scrub: 0.6,
+                scrub: 1.5,
                 pin: true,
               },
             }
@@ -52,25 +52,46 @@ const Portfolio = () => {
             </div>
             <div id="panels-container"  ref={sectionRef}>
                 <div className="panel">
-                    <img src="/screenshot.png" alt="Portfolio1"/>
+                    <img src="/portfolio/img3.webp" alt="Portfolio1"/>
+                    {/* <div className="panel_txt">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div> */}
                 </div>
                 <div className="panel">
-                    <img src="/screenshot.png" alt="Portfolio1"/>
+                    <img src="/portfolio/img1.webp" alt="Portfolio1"/>
+                    {/* <div className="panel_txt">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div> */}
                 </div>
                 <div className="panel">
-                    <img src="/screenshot.png" alt="Portfolio1"/>
+                    <img src="/portfolio/img4.webp" alt="Portfolio1"/>
+                    {/* <div className="panel_txt">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div> */}
                 </div>
                 <div className="panel">
-                    <img src="/screenshot.png" alt="Portfolio1"/>
+                    <img src="/portfolio/img2.webp" alt="Portfolio1"/>
+                    {/* <div className="panel_txt">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div> */}
                 </div>
                 <div className="panel">
-                    <img src="/screenshot.png" alt="Portfolio1"/>
+                    <img src="/portfolio/img5.webp" alt="Portfolio1"/>
+                    {/* <div className="panel_txt">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div> */}
                 </div>
                 <div className="panel">
-                    <img src="/screenshot.png" alt="Portfolio1"/>
+                    <img src="/portfolio/img6.webp" alt="Portfolio1"/>
+                    {/* <div className="panel_txt">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div> */}
                 </div>
                 <div className="panel">
-                    <img src="/screenshot.png" alt="Portfolio1"/>
+                    <img src="/portfolio/img7.webp" alt="Portfolio1"/>
+                    {/* <div className="panel_txt">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div> */}
                 </div>
             </div>
         </section>

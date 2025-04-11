@@ -1,5 +1,6 @@
 import './App.css'
-import Header from "./components/Header"
+import Experience from "./components/Experience"
+import Talk from "./components/Talk"
 import Hero from "./components/Hero"
 import About from "./components/About"
 import Portfolio from './components/Portfolio'
@@ -11,7 +12,8 @@ const App = () => {
       <Hero/>
       <About/>
       <Portfolio/>
-      <About/>
+      <Experience/>
+      {/* <Talk/> */}
     </>
   )
 }
