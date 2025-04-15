@@ -17,7 +17,7 @@ const Hero = () => {
                     </h1>
                 </div>
                 <div className="profile_image">
-                    <img src="/shubham-coat-2.webp" alt="Profile" />
+                    <img src="/shubham-front.png" alt="Profile" />
                 </div>
             </div>
         </section>

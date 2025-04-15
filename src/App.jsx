@@ -8,12 +8,11 @@ import Portfolio from './components/Portfolio'
 const App = () => {
   return (
     <>
-      {/* <Header/> */}
       <Hero/>
       <About/>
       <Portfolio/>
-      <Experience/>
-      {/* <Talk/> */}
+      <Experience/> 
+      <Talk/>
     </>
   )
 }

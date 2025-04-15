@@ -11,39 +11,31 @@ const Portfolio = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     useEffect(() => {
-        // Set timeout for 3 seconds
-        const timeoutId = setTimeout(() => {
-          // This code will run after 3 seconds
-          console.log('Starting animation after 3 seconds');
-    
-          // Your GSAP animation
-          const pin = gsap.fromTo(
-            sectionRef.current,
+        const ctx = gsap.context(() => {
+          const panels = sectionRef.current;
+      
+          gsap.fromTo(
+            panels,
+            { x: 0 },
             {
-              translateX: 0,
-            },
-            {
-              translateX: `-${sectionRef.current.offsetWidth - window.innerWidth}`,
-              ease: 'none',
-              duration: 1,
+              x: `-${panels.scrollWidth - window.innerWidth}`,
+              ease: "none",
               scrollTrigger: {
                 trigger: triggerRef.current,
-                start: 'top top',
-                end: '2000 top',
+                start: "top top",
+                end: () => `+=${panels.scrollWidth - window.innerWidth}`,
                 scrub: 1.5,
                 pin: true,
+                anticipatePin: 1,
+                markers: false,
               },
             }
           );
-    
-          // Cleanup the GSAP animation when the component unmounts or before starting a new one
-          return () => {
-            pin.kill();
-          };
-        }, 200); // Delay by 3000ms (3 seconds)
-
-        return () => clearTimeout(timeoutId);
-    }, []);
+        }, triggerRef);
+      
+        return () => ctx.revert(); // cleanup
+      }, []);
+      
     
     return(
         <section className="main_portfolio" id="panels" ref={triggerRef}>
