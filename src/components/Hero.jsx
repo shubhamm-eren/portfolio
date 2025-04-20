@@ -146,10 +146,10 @@ const Hero = () => {
                 <div className="animation_text">
                     <h1>
                         <span className="animation_txt_wrp">
-                            <span>Shubham</span>
-                            <span>Kumar</span>
-                            <span>Shubham</span>
-                            <span>Kumar</span>
+                            <span>Its</span>
+                            <span>Shubham!</span>
+                            <span>Its</span>
+                            <span>Shubham!</span>
                         </span>
                     </h1>
                 </div>
