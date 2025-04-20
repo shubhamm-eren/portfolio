@@ -5,6 +5,7 @@ import Hero from "./components/Hero"
 import About from "./components/About"
 import Portfolio from './components/Portfolio'
 import Skills from './components/Skills'
+import FooterStrip from './components/FooterStrip'
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
       <Experience/> 
       <Skills/>
       <Talk/>
+      <FooterStrip/>
     </>
   )
 }
