@@ -27,7 +27,7 @@ const About = () =>{
                             </span>
                         </h2>
                         <p>As a skilled Web Developer, I craft innovative, responsive websites tailored to your needs. Let's collaborate to build a powerful online presence and drive your business forward!</p>
-                        <a href="#" className="btn">View Portfolio</a>
+                        <a href="#portfolio" className="btn gotoportflio">View Portfolio</a>
                     </div>
                     <div className="about_img">
                         <h3 className="txt_image">Web Developer</h3>

@@ -39,7 +39,7 @@ const Portfolio = () => {
     
     return(
         <section className="main_portfolio" id="panels" ref={triggerRef}>
-            <div className="main_portfolio_txt">
+            <div className="main_portfolio_txt" id="portfolio">
                 <h2>Portfolio</h2>
             </div>
             <div id="panels-container"  ref={sectionRef}>

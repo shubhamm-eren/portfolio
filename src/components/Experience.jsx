@@ -42,13 +42,13 @@ const Experience = () => {
         const prevItem = listItems[i - 1];
   
         if (prevItem) {
-          tl.set(item, { color: "#0ae448" }, 0.5 * i)
+          tl.set(item, { color: "#09d3df" }, 0.5 * i)
             .to(slides[i], { autoAlpha: 1, duration: 0.2 }, "<")
             .set(prevItem, { color: "#fffce1" }, "<")
             .to(slides[i - 1], { autoAlpha: 0, duration: 0.2 }, "<");
         } else {
           // Initial active state for the first item and slide
-          gsap.set(item, { color: "#0ae448" });
+          gsap.set(item, { color: "#09d3df" });
           gsap.set(slides[i], { autoAlpha: 1 });
         }
       });
@@ -121,7 +121,7 @@ const Experience = () => {
               <li>Designing & developing websites focusing on UI/UX and performance.</li>
               <li>Optimizing for Google PageSpeed.</li>
               <li>WooCommerce customization.</li>
-              <li>Clean, scalable frontends for Laravel backends.</li>
+              {/* <li>Clean, scalable frontends for Laravel backends.</li> */}
               <li>Debugging, refining layouts, and improving interactions.</li>
               <li>Collaborating with designers and backend developers.</li>
             </ul>
