@@ -1138,7 +1138,7 @@ div#panels-container {
   }
 
   /* Removing Portfolio Animation */
-  /* div#panels-container {
+  div#panels-container {
     transform: none !important;
     flex-wrap: wrap !important;
     width: 100% !important;
@@ -1153,5 +1153,5 @@ div#panels-container {
   .main_portfolio_txt {
     height: auto;
     margin-top: 30px;
-  } */
+  }
 }
