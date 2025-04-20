@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,73 +10,83 @@ const Experience = () => {
   const triggerRef = useRef(null);
   const containerRef = useRef(null);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Function to check screen width and update the state
+  const checkIfMobile = () => {
+    setIsMobile(window.innerWidth <= 768); // 768px is typically the breakpoint for tablets/mobile
+  };
+
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const list = listRef.current;
-      const fill = fillRef.current;
-      const slides = gsap.utils.toArray(containerRef.current.querySelectorAll('.exp'));
-      const listItems = gsap.utils.toArray(list.querySelectorAll('li'));
-  
-      const totalSteps = listItems.length;
-      const initialFill = 1 / totalSteps;
-  
-      // 🟢 Set initial fill (first step pre-filled)
-      gsap.set(fill, {
-        scaleY: initialFill,
-        transformOrigin: "top left",
-      });
-  
-      const tl = gsap.timeline({
-        scrollTrigger: {
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile); // Listen to window resize events
+
+    // Run GSAP animations if not mobile
+    if (!isMobile) {
+      const ctx = gsap.context(() => {
+        const list = listRef.current;
+        const fill = fillRef.current;
+        const slides = gsap.utils.toArray(containerRef.current.querySelectorAll('.exp'));
+        const listItems = gsap.utils.toArray(list.querySelectorAll('li'));
+
+        const totalSteps = listItems.length;
+        const initialFill = 1 / totalSteps;
+
+        // 🟢 Set initial fill (first step pre-filled)
+        gsap.set(fill, {
+          scaleY: initialFill,
+          transformOrigin: "top left",
+        });
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: triggerRef.current,
+            start: "top top",
+            end: `+=${totalSteps * 100}%`,
+            pin: true,
+            scrub: true,
+            // markers: true, // Turn off in production
+          },
+        });
+
+        // Timeline animations for experience steps
+        listItems.forEach((item, i) => {
+          const prevItem = listItems[i - 1];
+
+          if (prevItem) {
+            tl.set(item, { color: "#09d3df" }, 0.5 * i)
+              .to(slides[i], { autoAlpha: 1, duration: 0.2 }, "<")
+              .set(prevItem, { color: "#fffce1" }, "<")
+              .to(slides[i - 1], { autoAlpha: 0, duration: 0.2 }, "<");
+          } else {
+            // Initial active state for the first item and slide
+            gsap.set(item, { color: "#09d3df" });
+            gsap.set(slides[i], { autoAlpha: 1 });
+          }
+        });
+
+        // Animate `.fill` based on scroll progress after first step
+        ScrollTrigger.create({
           trigger: triggerRef.current,
           start: "top top",
           end: `+=${totalSteps * 100}%`,
-          pin: true,
           scrub: true,
-          // markers: true, // Turn off in production
-        },
-      });
-  
-      // Timeline animations for experience steps
-      listItems.forEach((item, i) => {
-        const prevItem = listItems[i - 1];
-  
-        if (prevItem) {
-          tl.set(item, { color: "#09d3df" }, 0.5 * i)
-            .to(slides[i], { autoAlpha: 1, duration: 0.2 }, "<")
-            .set(prevItem, { color: "#fffce1" }, "<")
-            .to(slides[i - 1], { autoAlpha: 0, duration: 0.2 }, "<");
-        } else {
-          // Initial active state for the first item and slide
-          gsap.set(item, { color: "#09d3df" });
-          gsap.set(slides[i], { autoAlpha: 1 });
-        }
-      });
-  
-      // Animate `.fill` based on scroll progress after first step
-      ScrollTrigger.create({
-        trigger: triggerRef.current,
-        start: "top top",
-        end: `+=${totalSteps * 100}%`,
-        scrub: true,
-        onUpdate: (self) => {
-          const progress = self.progress;
-          const totalFill = initialFill + progress * (1 - initialFill);
-          gsap.to(fill, {
-            scaleY: totalFill,
-            transformOrigin: "top left",
-            ease: "none",
-            overwrite: true,
-          });
-        },
-      });
-  
-    }, triggerRef); // scoped GSAP
-  
-    return () => ctx.revert(); // cleanup on unmount
-  }, []);
-  
-  
+          onUpdate: (self) => {
+            const progress = self.progress;
+            const totalFill = initialFill + progress * (1 - initialFill);
+            gsap.to(fill, {
+              scaleY: totalFill,
+              transformOrigin: "top left",
+              ease: "none",
+              overwrite: true,
+            });
+          },
+        });
+      }, triggerRef); // scoped GSAP
+
+      return () => ctx.revert(); // cleanup on unmount
+    }
+  }, [isMobile]); // Re-run only if screen size changes
 
   return (
     <section className="exp_sec pin-section" ref={triggerRef}>
@@ -89,7 +99,7 @@ const Experience = () => {
           <div className="fill" ref={fillRef}></div>
         </ul>
         <div className="exp_main" ref={containerRef}>
-        <div className="exp exp_3">
+          <div className="exp exp_3">
             <h3>Frontend Trainee with a Freelancer</h3>
             <p>2022 – 2023</p>
             <ul>
@@ -121,7 +131,6 @@ const Experience = () => {
               <li>Designing & developing websites focusing on UI/UX and performance.</li>
               <li>Optimizing for Google PageSpeed.</li>
               <li>WooCommerce customization.</li>
-              {/* <li>Clean, scalable frontends for Laravel backends.</li> */}
               <li>Debugging, refining layouts, and improving interactions.</li>
               <li>Collaborating with designers and backend developers.</li>
             </ul>

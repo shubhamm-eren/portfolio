@@ -1156,7 +1156,28 @@ div#panels-container {
   }
   .main_portfolio_txt {
     height: auto;
-    margin-top: 30px;
+    margin-top: 2rem;
+  }
+  ul.list {
+      display: none;
+  }
+
+  .exp_main .exp {
+      transform: none;
+      position: static;
+      opacity: 1 !important;
+      visibility: visible !important;
+  }
+
+  .exp_main {
+      height: auto;
+      padding: 0;
+      display: grid;
+      gap: 20px;
+  }
+
+  .exp_wrap {
+      grid-template-rows: auto;
   }
 }
 
@@ -1263,9 +1284,6 @@ div#panels-container {
     width: 3.5rem;
   }
 
-  .skill_card h3 {
-    font-size: 1.1rem;
-  }
 }
 
 @media (max-width: 768px) {
@@ -1281,9 +1299,6 @@ div#panels-container {
     padding: 1.5rem 1rem;
   }
 
-  .skill_card h3 {
-    font-size: 1rem;
-  }
 }
 
 @media (max-width: 540px) {
@@ -1297,9 +1312,5 @@ div#panels-container {
 
   .skill_card img {
     width: 3rem;
-  }
-
-  .skill_card h3 {
-    font-size: 0.95rem;
   }
 }
