@@ -137,7 +137,7 @@ const Hero = () => {
     );
     return(
         <section className="banner">
-            {/* <Particles id="cs_particles" options={options} /> */}
+            <Particles id="cs_particles" options={options} />
             <div className="inner_banner">
                 <div className="black_strip">
                     <h3>Web Developer</h3>
