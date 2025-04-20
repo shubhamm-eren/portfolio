@@ -557,7 +557,7 @@ div#panels-container {
   font-size: 1.5rem;
   color: #ddd;
   margin-bottom: 2rem;
-  max-width: 700px;
+  max-width: 45rem;
   margin-inline: auto;
 }
 
@@ -643,6 +643,7 @@ div#panels-container {
 
   .talk_title_sec p {
     font-size: 1.2rem;
+    max-width: 90%;
   }
 
   .platform_card {
@@ -1137,7 +1138,7 @@ div#panels-container {
   }
 
   /* Removing Portfolio Animation */
-  div#panels-container {
+  /* div#panels-container {
     transform: none !important;
     flex-wrap: wrap !important;
     width: 100% !important;
@@ -1152,5 +1153,5 @@ div#panels-container {
   .main_portfolio_txt {
     height: auto;
     margin-top: 30px;
-  }
+  } */
 }
